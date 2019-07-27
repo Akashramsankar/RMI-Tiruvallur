@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script language="javascript" type="text/javascript">
+            function dynamicdropdown(listindex)
+            {
+                document.getElementById("subcategory").length = 0;
+                switch (listindex)
+                {
+                    case "New Road" :
+                        document.getElementById("subcategory").options[0]=new Option("Please select Inspect Type","");
+                        document.getElementById("subcategory").options[1]=new Option("Earthen","Earthen");
+                        document.getElementById("subcategory").options[2]=new Option("Gravel","Gravel");
+                        document.getElementById("subcategory").options[3]=new Option("WBM","WBM");
+                        document.getElementById("subcategory").options[4]=new Option("WBMII","WBMII");
+                        document.getElementById("subcategory").options[5]=new Option("BT","BT");
+                        document.getElementById("subcategory").options[6]=new Option("Furlong","Furlong");
+                        break;
+
+                    case "Renewal BT" :
+                        document.getElementById("subcategory").options[0]=new Option("Please select Inspect Type","");
+                        document.getElementById("subcategory").options[1]=new Option("BT","BT");
+                        break;
+
+                    case "Culvert" :
+                        document.getElementById("subcategory").options[0]=new Option("Please select Inspect Type","");
+                        document.getElementById("subcategory").options[1]=new Option("RCC Slab Culvert","RCC Slab Culvert");
+                        document.getElementById("subcategory").options[2]=new Option("Pipe Culvert","Pipe Culvert");
+                        document.getElementById("subcategory").options[3]=new Option("Vented Causeway","Vented Causeway");
+                        document.getElementById("subcategory").options[4]=new Option("Piped Causeway","Piped Causeway");
+                        document.getElementById("subcategory").options[5]=new Option("Hard Bed","Hard Bed");
+                        document.getElementById("subcategory").options[6]=new Option("Others","Others");
+                        document.getElementById("subcategory").options[6]=new Option("MinorBridge","MinorBridge");
+                        document.getElementById("subcategory").options[6]=new Option("MajorBridge","MajorBridge");
+                        break;
+
+                    case "BT-WBM" :
+                        document.getElementById("subcategory").options[0]=new Option("Please select Inspect Type","");
+                        document.getElementById("subcategory").options[1]=new Option("BT","BT");
+                        document.getElementById("subcategory").options[2]=new Option("Picking","Picking");
+                        document.getElementById("subcategory").options[3]=new Option("WBM","WBM");
+                        break;
+
+                    case "Renewal BT - Double Layer WBM" :
+                        document.getElementById("subcategory").options[0]=new Option("Please select Inspect Type","");
+                        document.getElementById("subcategory").options[1]=new Option("BT","BT");
+                        document.getElementById("subcategory").options[2]=new Option("Picking","Picking");
+                        document.getElementById("subcategory").options[3]=new Option("WBM Layer1","WBM Layer1");
+                        document.getElementById("subcategory").options[4]=new Option("Piped Causeway","Piped Causeway");
+                        document.getElementById("subcategory").options[5]=new Option("WBM Layer2","WBM Layer2");
+                        break;
+                }
+                return true;
+            }
+       </script>
+
+
+    </head>
+    <title>Dynamic Drop Down List</title>
+    <body>
+        <div class="category_div" id="category_div">Please specify Inspection Category:
+            <select name="category" class="required-entry" id="category" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                <option value="">Select Inspection Category</option>
+                <option value="New Road">New Road</option>
+                <option value="Renewal BT">Renewal BT</option>
+                <option value="Culvert">Culvert</option>
+                <option value="BT-WBM">BT-WBM</option>
+                <option value="Renewal BT - Double Layer WBM">Renewal BT - Double Layer WBM</option>
+            </select>
+        </div>
+        <div class="sub_category_div" id="sub_category_div">Please select Inspection Type:
+            <script type="text/javascript" language="JavaScript">
+                document.write('<select name="subcategory" id="subcategory"><option value="">Please select Inspection Type</option></select>')
+            </script>
+            <noscript>
+                <select name="subcategory" id="subcategory" >
+                    <option value="">Please select Inspection Type</option>
+                </select>
+            </noscript>
+        </div>
+    </body>
+</html>
+
+
