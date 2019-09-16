@@ -32,15 +32,13 @@ form label{
 
     <div class="form-group">
         <label for="block" >Block:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
- 	    <select class="form-control" id="block" name="block" onclick="populateHabitation()" style="display: inline; width: 28%">
-            {% set block = ['ATHOOR','BATLAGUNDU','DINDIGUL','GUZILIAMPARAI','KODAIKANAL','NATHAM','NILAKOTTAI',
-                            'ODDANCHATRAM','PALANI','REDDIARCHATRAM','SHANARPATTI','THOPPAMPATTY','VADAMADURAI',
-                            'VEDASANDUR'] %}
-            {% for ch in block %}
-                <option value= "{{ch}}">{{ch}}</option>"
-            {% endfor %}
-        </select>
-    <div>
+                <select style="flex: 4" class="form-control" id="block" name="block" onclick="populateHabitation()">
+                    {% set nature = ['Tiruvallur', 'Tiruvallur-HQ', 'Ellapuram', 'Gummidipoondi', 'Kadambathur', 'Minjur', 'Pallipet', 'Poonamallee', 'Poondi', 'Puzhal', 'R.K.Pet', 'Sholavaram', 'Tiruvalangadu', 'Tiruttani', 'Villivakkam'] %}
+                    {% for nat in nature %}
+                        <option value= "{{nat}}">{{nat}}</option>"
+                    {% endfor %}
+                </select>
+	    <div>
         <label for="rd_code">Road Code:&nbsp;&nbsp;</label>
         <input type="text" id="rd_code" name="rd_code" onChange="check_code()"
                oninput="this.value = this.value.toUpperCase()" required style="display: inline; width: 10%;">
