@@ -388,7 +388,6 @@ def latlon(f):
         return info
     lat = [float(x) / float(y) for x, y in decoded['GPSInfo'][2]]
     lon = [float(x) / float(y) for x, y in decoded['GPSInfo'][4]]
-    alt = float(decoded['GPSInfo'][6][0]) / float(decoded['GPSInfo'][6][1])
     timestamp = decoded['DateTimeOriginal']
     # assign values to dict
 #    info['filename'] = filename
@@ -397,15 +396,12 @@ def latlon(f):
     info['timestamp'] = dt.strptime(
         timestamp,
         "%Y:%m:%d %H:%M:%S").strftime("%Y/%m/%d %H:%M:%S")
-    info['altitude'] = alt
     # corrections if necessary
     if decoded['GPSInfo'][1] == "S":
         info['lat'] *= -1
     if decoded['GPSInfo'][3] == "W":
         info['lon'] *= -1
     # if we're below sea level, the value's negative
-    if decoded['GPSInfo'][5] == 1:
-        info['altitude'] *= -1
 #    return {lat, lon, timestamp, alt}
     return info
 
